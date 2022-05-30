@@ -5057,7 +5057,7 @@ local players = visuals:Sector("players", "Left")
 players:Element("Toggle", "teammates")
 players:Element("ToggleColor", "box", {default = {Color = COL3RGB(255,255,255)}})
 players:Element("ToggleColor", "name", {default = {Color = COL3RGB(255,255,255)}})
-players:Element("Toggle", "health", {default = {Color = COL3RGB(255,255,255)}})
+players:Element('ToggleColor', 'health', {default = {Color = COL3RGB(255,255,255)}})
 players:Element("ToggleColor", "weapon", {default = {Color = COL3RGB(255,255,255)}})
 players:Element("ToggleColor", "weapon icon", {default = {Color = COL3RGB(255,255,255)}})
 players:Element("Button", "minecraft", {}, function()
@@ -6985,7 +6985,7 @@ tbl.BoxOutline.Visible = false
 end
 
 if values.visuals.players.health.Toggle then
-tbl.Health.Color = COL3(0,1,0)
+tbl.Health.Color = values.visuals.players.health.Color
 tbl.Health.From = Vec2((tbl.Box.Position.X - 5), tbl.Box.Position.Y + tbl.Box.Size.Y)
 tbl.Health.To = Vec2(tbl.Health.From.X, tbl.Health.From.Y - CLAMP(Player.Character.Humanoid.Health / Player.Character.Humanoid.MaxHealth, 0, 1) * tbl.Box.Size.Y)
 tbl.Health.Visible = OnScreen
