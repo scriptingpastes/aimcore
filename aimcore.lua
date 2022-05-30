@@ -4631,7 +4631,7 @@ repeat RunService.RenderStepped:Wait() until game:IsLoaded()
       end
 
       RunService.RenderStepped:Wait()
-      local gui = library:New("aimcore by coke#8620 [version 1.0] PASTED FROM SALAD.TK")
+      local gui = library:New("aimcore by coke#8620 [version 1.1] PASTED FROM SALAD.TK")
       local legit = gui:Tab("legit")
       local rage = gui:Tab("rage")
       local aatab = gui:Tab("anti-aim")
@@ -4656,6 +4656,27 @@ local luascripts = misc:Sector("lua scripts", "Right")
 luascripts:Element("Scroll", "lua", {options = allluas, Amount = 5})
 luascripts:Element("Button", "load", {}, function()
 loadstring(readfile("aimlua\\"..values.misc["lua scripts"].lua.Scroll))()
+end)
+
+luascripts:Element("Button", "Rejoin", nil, function()
+  local ts = game:GetService("TeleportService")
+  local p = game:GetService("Players").LocalPlayer
+  ts:Teleport(game.PlaceId, p)
+end)
+luascripts:Element("Button", "Old sounds", nil, function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Shanemakesscripts/old-sounds/main/old%20sounds"))()
+end)
+luascripts:Element("Button", "BloxFun", nil, function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/NineR-9R/BloxFun/main/source.lua"))()
+end)
+luascripts:Element("Button", "Unlock all skins", nil, function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptingpastes/skinchanger/main/CB%20Skinchanger.lua"))()
+end)
+luascripts:Element("Button", "Taunts", nil, function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Shanemakesscripts/taunts/main/script"))()
+end)
+luascripts:Element("Button", "Username Spoofer", nil, function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptingpastes/skinchanger/main/username%20spoofer.lua"))()
 end)
 
 local knife = skins:Sector("knife", "Left")
@@ -4730,6 +4751,91 @@ local settings = legit:Sector("settings", "Right")
 settings:Element("Toggle", "free for all")
 settings:Element("Toggle", "forcefield check")
 settings:Element("ToggleColor", "draw fov")
+settings:Element('Button', 'Buy P90', {}, function()
+  -- pasted from google
+  local gun = "P90" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+settings:Element('Button', 'Buy AK47', {}, function()
+  -- pasted from google
+  local gun = "AK47" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+settings:Element('Button', 'Buy AWP', {}, function()
+  -- pasted from google
+  local gun = "AWP" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+settings:Element('Button', 'Buy G3SG1', {}, function()
+  -- pasted from google
+  local gun = "G3SG1" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+settings:Element('Button', 'Buy Galil', {}, function()
+  -- pasted from google
+  local gun = "Galil" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+settings:Element('Button', 'Buy AUG', {}, function()
+  -- pasted from google
+  local gun = "AUG" -- AWP, AK47, G3SG1, ect.
+  local givefunc
+  for _, v in pairs(getgc()) do
+  local parentScript = rawget(getfenv(v), "script")
+
+      if type(v) == "function" and parentScript == game:GetService("Players").LocalPlayer.PlayerGui.Client and islclosure(v) and not is_synapse_function(v) and debug.getinfo(v).name == "giveTool" then
+          givefunc = v
+          break
+      end
+  end
+  debug.setupvalue(givefunc, 7, gun) -- index 7 = secondary wep, index 8 = primary wep (i think lol. forgor)
+end)
+
 
 local aimbot = rage:Sector("aimbot", "Left")
 aimbot:Element("Toggle", "enabled")
@@ -4803,12 +4909,12 @@ while fakeduckloop and syn do
   end)
 end
 end)
-antiaim:Element("Dropdown", "yaw base", {options = {"camera", "targets", "spin", "random", "anti crippin'", "unhittable", "keybind yaw"}})
+antiaim:Element("Dropdown", "yaw base", {options = {"camera", "targets", "spin", "random", "anti crippin'", "unhittable", "keybind yaw", "3 head"}})
 antiaim:Element("Slider", "yaw offset", {min = -180, max = 180, default = 0})
 antiaim:Element("ToggleKeybind", "reset yaw")
 antiaim:Element("Toggle", "jitter")
 antiaim:Element("Slider", "jitter offset", {min = -180, max = 180, default = 0})
-antiaim:Element("Dropdown", "pitch", {options = {"up", "down", "180", "180v2", "180v3", "random", "random2", "totally normal", "totally normal2", "custom", "down2", "up2", "sucking dick", "fake headless", "huge"}})
+antiaim:Element("Dropdown", "pitch", {options = {"up", "down", "180", "180v2", "180v3", "random", "random2", "totally normal", "totally normal2", "custom", "down2", "up2", "sucking dick", "fake headless", "huge", "dump"}})
 antiaim:Element("Slider", "pitch angle", {min = -100, max = 100, default = 0})
 antiaim:Element("Toggle", "extend pitch")
 antiaim:Element("ToggleKeybind", "reset pitch")
@@ -4954,6 +5060,41 @@ players:Element("ToggleColor", "name", {default = {Color = COL3RGB(255,255,255)}
 players:Element("Toggle", "health", {default = {Color = COL3RGB(255,255,255)}})
 players:Element("ToggleColor", "weapon", {default = {Color = COL3RGB(255,255,255)}})
 players:Element("ToggleColor", "weapon icon", {default = {Color = COL3RGB(255,255,255)}})
+players:Element("Button", "minecraft", {}, function()
+  --created by boui
+  local faces = {"Front", "Back", "Bottom", "Top", "Right", "Left"}
+  local materials = {
+    {"Wood", "3258599312"}, {"WoodPlanks", "8676581022"},
+    {"Brick", "8558400252"}, {"Cobblestone", "5003953441"},
+    {"Concrete", "7341687607"}, {"DiamondPlate", "6849247561"},
+    {"Fabric", "118776397"}, {"Granite", "4722586771"},
+    {"Grass", "4722588177"}, {"Ice", "3823766459"},
+    {"Marble", "62967586"}, {"Metal", "62967586"},
+    {"Sand", "152572215"}
+  }
+
+  function texture(ins, id)
+    for _, v in pairs(faces) do
+      local texture = Instance.new("Texture", ins)
+      texture.ZIndex = 2147483647
+      texture.Texture = "rbxassetid://" .. id
+      texture.Face = Enum.NormalId[v]
+      texture.Color3 = ins.Color
+      texture.Transparency = ins.Transparency
+    end
+  end
+
+  for _, part in pairs(workspace:GetDescendants()) do
+    if part:IsA("BasePart") then
+      for _, v in pairs(materials) do
+        if part.Material.Name == v[1] then
+          texture(part, v[2])
+          part.Material = "SmoothPlastic"
+        end
+      end
+    end
+  end
+end)
 players:Element("Jumbobox", "indicators", {options = {"armor"}})
 players:Element("Jumbobox", "outlines", {options = {"drawings", "text"}, default = {Jumbobox = {"drawings", "text"}}})
 players:Element("Dropdown", "font", {options = {"Plex", "Monospace", "System", "UI"}})
@@ -6705,6 +6846,9 @@ end
 if values["anti-aim"].angles["yaw base"].Dropdown == "anti crippin'" then
 Angle = Angle + CLAMP(Spin + 100, 0, 180)
 end
+if values["anti-aim"].angles["yaw base"].Dropdown == "3 head" then
+  Angle = Angle + RAD(RANDOM(1,180))
+end
 if values["anti-aim"].angles["yaw base"].Dropdown == "keybind yaw" then
 if UserInputService:IsKeyDown("W") then
   Angle = -ATAN2(CamLook.Z, CamLook.X) + RAD(-90) + RAD(0)
@@ -6766,7 +6910,7 @@ LocalPlayer.Character.Humanoid.HipHeight = values["anti-aim"].angles["high pos"]
 else
 LocalPlayer.Character.Humanoid.HipHeight = values["anti-aim"].angles["high pos"].Slider or 1
 end
-local Pitch = values["anti-aim"].angles["pitch"].Dropdown == "up" and 1 or values["anti-aim"].angles["pitch"].Dropdown == "down" and -1 or values["anti-aim"].angles["pitch"].Dropdown == "180v2" and 2 or values["anti-aim"].angles["pitch"].Dropdown == "180v3" and -9 or values["anti-aim"].angles["pitch"].Dropdown == "random" and RANDOM(-25, 25)/25 or values["anti-aim"].angles["pitch"].Dropdown == "random2" and RANDOM(-99999999, 100)/100 or values["anti-aim"].angles["pitch"].Dropdown == "totally normal" and -71 or values["anti-aim"].angles["pitch"].Dropdown == "totally normal2" and 71 or values["anti-aim"].angles["pitch"].Dropdown == "custom" and values["anti-aim"].angles["pitch angle"].Slider or values["anti-aim"].angles["pitch"].Dropdown == "up2" and 12 or values["anti-aim"].angles["pitch"].Dropdown == "down2" and -12 or values["anti-aim"].angles["pitch"].Dropdown == "fake headless" and -99 or values["anti-aim"].angles["pitch"].Dropdown == "sucking dick" and -62 or values["anti-aim"].angles["pitch"].Dropdown == "huge" and math.huge or 2.5
+local Pitch = values["anti-aim"].angles["pitch"].Dropdown == "up" and 1 or values["anti-aim"].angles["pitch"].Dropdown == "down" and -1 or values["anti-aim"].angles["pitch"].Dropdown == "180v2" and 2 or values["anti-aim"].angles["pitch"].Dropdown == "180v3" and -9 or values["anti-aim"].angles["pitch"].Dropdown == "random" and RANDOM(-25, 25)/25 or values["anti-aim"].angles["pitch"].Dropdown == "random2" and RANDOM(-99999999, 100)/100 or values["anti-aim"].angles["pitch"].Dropdown == "totally normal" and -71 or values["anti-aim"].angles["pitch"].Dropdown == "dump" and-6/24-69 or values["anti-aim"].angles["pitch"].Dropdown == "totally normal2" and 71 or values["anti-aim"].angles["pitch"].Dropdown == "custom" and values["anti-aim"].angles["pitch angle"].Slider or values["anti-aim"].angles["pitch"].Dropdown == "up2" and 12 or values["anti-aim"].angles["pitch"].Dropdown == "down2" and -12 or values["anti-aim"].angles["pitch"].Dropdown == "fake headless" and -99 or values["anti-aim"].angles["pitch"].Dropdown == "sucking dick" and -62 or values["anti-aim"].angles["pitch"].Dropdown == "huge" and math.huge or 2.5
 if values["anti-aim"].angles["extend pitch"].Toggle and (values["anti-aim"].angles["pitch"].Dropdown == "up" or values["anti-aim"].angles["pitch"].Dropdown == "down" or values["anti-aim"].angles["pitch"].Dropdown == "180" or values["anti-aim"].angles["pitch"].Dropdown == "fake headless" or values["anti-aim"].angles["pitch"].Dropdown == "sucking dick") then
 Pitch = (Pitch*2)/1.6
 end
