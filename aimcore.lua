@@ -6514,7 +6514,8 @@ for _,Player in pairs(Players:GetPlayers()) do
                   break
                 end
               else
-                local penetration = values.rage.aimbot["penetration"].Slider * 0.05
+                local hismh = values.rage.aimbot["penetration"].Slider * 0.05
+                local penetration = hismh * Client.gun.Penetration.Value
                 local limit = 0
                 local dmgmodifier = 1
                 for i = 1, #Hits do
@@ -6985,7 +6986,7 @@ tbl.BoxOutline.Visible = false
 end
 
 if values.visuals.players.health.Toggle then
-tbl.Health.Color = values.visuals.players.health.Color
+tbl.Health.Color = Color3.fromHSV(tick() % 5 / 5, 1, 1)
 tbl.Health.From = Vec2((tbl.Box.Position.X - 5), tbl.Box.Position.Y + tbl.Box.Size.Y)
 tbl.Health.To = Vec2(tbl.Health.From.X, tbl.Health.From.Y - CLAMP(Player.Character.Humanoid.Health / Player.Character.Humanoid.MaxHealth, 0, 1) * tbl.Box.Size.Y)
 tbl.Health.Visible = OnScreen
